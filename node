@@ -1,0 +1,19 @@
+Todo list
+
+1. Membuat data awal
+2.membuat koneksi ke data awal
+3.menampilkan data awal pada halaman web
+4.menambahkan 
+
+function handleFormSubmit(event) {
+
+
+    preventDefault(event);
+  //mengambil isi form
+   const form = event.target;
+   const nama = form.reporter.value.trim();
+   const kategori = form.category.value;
+   const deskripsi = form.description.value.trim();
+
+  return console.log(nama)
+}

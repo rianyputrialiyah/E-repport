@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siparis - Infra Report & Analytics</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2921/2921222.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- HEADER SECTION -->
+        <header class="Header">
+            <div class="Logo">
+                <img src="assets/logoipsum-338.png" alt="Logo Siparis">
+                <span>SchoolCare</span>
+            </div>
+
+            <nav class="navbar">
+                <div class="pill-nav">
+                    <a href="#" id="nav-report" class="pill-btn active" onclick="switchPage('home'); return false;">
+                        Report Issue
+                    </a>
+                    <a href="#" id="nav-analytics" class="pill-btn" onclick="switchPage('tracking'); return false;">
+                        Analytics
+                        <span class="badge-count">09</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- page 1 report issue-->
+        <main id="home-page" class="page active-page">
+            <div class="hero-content">
+                <span class="tagline">// pelapor kerusakan</span>
+                <h1 class="hero-title">
+                    INFRA <br>
+                    <span>REPORT</span>
+                </h1>
+                <p class="desc">
+                    Laporkan kendala sarana & prasarana sekolah secara<br>
+                    langsung untuk penanganan cepat oleh tim sapras.
+                </p>
+            </div>
+
+            <div class="report-card">
+                <form id="facility-report-form" onsubmit="handleFormSubmit(event)"> 
+                    <div class="form-group">
+                        <label for="input-reporter">pelapor</label>
+                        <input type="text" id="input-reporter" name="reporter" placeholder="Nama lengkap/kelas" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select-category">kategori</label>
+                        <select id="select-category" name="category" required>
+                            <option value="" disabled selected hidden>pilih kategori kerusakan</option>
+                            <option value="AC">AC</option>
+                            <option value="Elektronik">Elektronik</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Kebersihan">Kebersihan</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deskripsi">deskripsi</label>
+                        <textarea id="deskripsi" name="description" placeholder="jelaskan detail kerusakan dan lokasinya..." maxlength="200" required></textarea>
+                    </div>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- page 2 analystics-->
+        <section id="tracking-page" class="page">
+            <div class="tracking-banner">
+                <div class="banner-title-side">
+                    <h2>Live<br>Tracking</h2>
+                </div>
+
+                <div class="banner-stats-side">
+                    <div class="stat-box">
+                        <h3>05</h3>
+                        <p>menunggu proses</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>04</h3>
+                        <p>Selesai</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-container">
+                <button class="filter-btn active">semua (5)</button>
+                <button class="filter-btn">Menunggu (3)</button>
+                <button class="filter-btn">Selesai (2)</button>
+            </div>
+
+            <div class="blue-box-container">
+                <div class="tracking-table-wrapper">
+                    <table class="tracking-table">
+                        <thead>
+                            <tr>
+                                <th>pelapor</th>
+                                <th>Kategori</th>
+                                <th>deskripsi</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reports-table-body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
